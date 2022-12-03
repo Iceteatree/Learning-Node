@@ -1,0 +1,30 @@
+{
+  "name": "learning-node",
+  "version": "1.0.0",
+  "description": "Personal Repo to learn nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./00-Node-Introduction/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iceteatree/Learning-Node.git"
+  },
+  "keywords": [
+    "node",
+    "git",
+    "mongo",
+    "sql",
+    "backend"
+  ],
+  "author": "Alan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iceteatree/Learning-Node/issues"
+  },
+  "homepage": "https://github.com/Iceteatree/Learning-Node#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
