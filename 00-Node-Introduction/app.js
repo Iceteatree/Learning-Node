@@ -11,14 +11,29 @@ function rqListener(req, res) {
             `<html>
                 <body>
                     <h1>Hello World</h1>
+                    <form action="/test" method="POST">
+                        <input type="text" name="test">
+                            <button type="submit"> Click me to post </button>
+                        </input>
+                    </form>
                 </body>
             </html>
             `
         );
         return res.end();
     }
-    if (url === '/test' && method === 'GET') {
-        fs.writeFileSync('test.txt', 'Dummy Test');
+
+    if (url === '/test' && method === 'POST') {
+        const body = [];
+        req.on('data', (chunk) => {
+            console.log(chunk)
+            body.push(chunk);
+        });
+        req.on('end', () => {
+            const parsedBody = Buffer.concat(body).toString();
+            const message = parsedBody.split('=')[1];
+            fs.writeFileSync('test.txt', message);
+        });
         res.statusCode = 302;
         res.setHeader('Location', '/');
         return res.end();
