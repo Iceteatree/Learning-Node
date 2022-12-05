@@ -32,11 +32,12 @@ function rqListener(req, res) {
         req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
             const message = parsedBody.split('=')[1];
-            fs.writeFileSync('test.txt', message);
+            fs.writeFile('test.txt', message, (err) => {
+                res.statusCode = 302;
+                res.setHeader('Location', '/');
+                return res.end();
+            });
         });
-        res.statusCode = 302;
-        res.setHeader('Location', '/');
-        return res.end();
     }
     return res.end(); //Send back to the client. Don't write anything after it.
 };
