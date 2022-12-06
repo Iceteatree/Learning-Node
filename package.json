@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./00-Node-Introduction/app.js"
+    "start": "nodemon ./01-Node-Introduction-Final-Assignment/app.ts"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,10 @@
   },
   "homepage": "https://github.com/Iceteatree/Learning-Node#readme",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8"
   }
 }
