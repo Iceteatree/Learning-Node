@@ -2,12 +2,8 @@
 
 This repo is for learning node and all the little exercises that come with it.
 
-## Markdown example
+## Chapter 0 - 30: Nodejs The complete guide
+NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)
+https://www.udemy.com/course/nodejs-the-complete-guide/
 
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+By Alan
