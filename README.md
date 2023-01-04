@@ -6,4 +6,8 @@ This repo is for learning node and all the little exercises that come with it.
 NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)
 https://www.udemy.com/course/nodejs-the-complete-guide/
 
-By Alan
+Date Started: Sometime in December 2022.
+
+Last updated: 04 Jan 2023
+
+By Iceteatree
