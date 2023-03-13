@@ -5,8 +5,8 @@ class User {
     constructor(username, email, cart, id) {
         this.name = username;
         this.email = email;
-        this.cart = cart;
-        this_id = id;
+        this.cart = cart //{items: []};
+        this._id = id;
     }
 
     save () {
@@ -25,6 +25,7 @@ class User {
             return cp.productId.toString() === product._id.toString();
         });
         let newQuantity = 1;
+        let cartProduct = this.cart.items[cartProductIndex];
         const updatedCartItems = [...this.cart.items];
 
         if (cartProduct >= 0) {
@@ -38,6 +39,25 @@ class User {
         return db
             .collection('users_learning_node')
             .updateOne({_id: new mongodb.ObjectId(this._id)}, {$set: {cart: updatedCart}})
+    }
+
+    getCart() {
+        const db = getDb();
+        const productIds = this.cart.items.map(i => {
+            return i.productId;
+        });
+        return db
+            .collection('products_learning_node')
+            .find({_id: {$in: productIds}})
+            .toArray()
+            .then(products => {
+                return products.map(p => {
+                    return {...p, quantity: this.cart.items.find(i => {
+                        return i.productId.toString() === p._id.toString();
+                    }).quantity
+                };
+            });
+        });
     }
 
     static findById(userId) {
