@@ -1,10 +1,14 @@
+require('dotenv').config();
 const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const mongoUser = process.env.MONGO_USER;
+const mongoPassword = process.env.MONGO_PASSWORD;
 
 const errorController = require('./controllers/error');
-const mongoConnect = require('./util/database').mongoConnect;
 const User = require('./models/user');
 
 const app = express();
@@ -34,6 +38,10 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 
-mongoConnect(() => {
-    app.listen(3000);
-})
+mongoose.connect(`mongodb+srv://${mongoUser}:${mongoPassword}@cluster0-education.qfhv1.mongodb.net/shop_learning_node?retryWrites=true&w=majority`)
+    .then(result => {
+        app.listen(3000);
+    })
+    .catch(err => {
+        console.log(err);
+    });
