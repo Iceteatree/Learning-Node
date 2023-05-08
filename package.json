@@ -29,6 +29,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.8"
   }
 }
