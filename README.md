@@ -8,6 +8,6 @@ https://www.udemy.com/course/nodejs-the-complete-guide/
 
 Date Started: Sometime in December 2022.
 
-Last updated: 31 July 2023.
+Last updated: 08 August 2023.
 
 By Iceteatree
